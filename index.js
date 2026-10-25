@@ -1,7 +1,7 @@
 import { supabase, openai } from "./config.js";
 
 async function main() {
-  const query = "Global Conflict";
+  const query = "Sea";
 
   const embedding = await getEmbedding(query);
   await getSimilarities(embedding);
@@ -20,7 +20,7 @@ async function getSimilarities(embedding) {
   const similarities = await supabase.rpc("match_documents", {
     query_embedding: embedding, // Pass the embedding you want to compare
     match_threshold: 0.5, // Choose an appropriate threshold for your data
-    match_count: 1, // Choose the number of matches
+    match_count: 2, // Choose the number of matches
   });
   console.log(similarities);
   //   return similarities;
