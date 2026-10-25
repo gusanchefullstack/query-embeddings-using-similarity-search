@@ -1,11 +1,11 @@
 import { supabase, openai } from "./config.js";
 
 async function main() {
-  const query = "Sea";
+  const query = "Global armed conflict in the first part of 20th century";
 
   const embedding = await getEmbedding(query);
-  await getSimilarities(embedding);
-  //   console.log(data);
+  const result = await getSimilarities(embedding);
+  console.log(result);
 }
 
 async function getEmbedding(text) {
@@ -19,11 +19,10 @@ async function getEmbedding(text) {
 async function getSimilarities(embedding) {
   const similarities = await supabase.rpc("match_documents", {
     query_embedding: embedding, // Pass the embedding you want to compare
-    match_threshold: 0.5, // Choose an appropriate threshold for your data
-    match_count: 2, // Choose the number of matches
+    match_threshold: 0.70, // Choose an appropriate threshold for your data
+    match_count: 1, // Choose the number of matches
   });
-  console.log(similarities);
-  //   return similarities;
+  return similarities.data;
 }
 
 main();
