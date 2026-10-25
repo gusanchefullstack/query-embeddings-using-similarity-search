@@ -1,0 +1,30 @@
+{
+  "name": "query-embeddings",
+  "version": "1.0.0",
+  "description": "How to query pgvector embeddings using cosine similarity",
+  "keywords": [
+    "pgvector",
+    "embeddings",
+    "supabase",
+    "openai"
+  ],
+  "homepage": "https://github.com/gusanchefullstack/query-embeddings-using-similarity-search#readme",
+  "bugs": {
+    "url": "https://github.com/gusanchefullstack/query-embeddings-using-similarity-search/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusanchefullstack/query-embeddings-using-similarity-search.git"
+  },
+  "license": "MIT",
+  "author": "Gustavo Sanchez <gustavosanchezgalarza@gmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "openai": "^7.43.0"
+  }
+}
